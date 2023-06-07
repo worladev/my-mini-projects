@@ -1,6 +1,9 @@
 
 class PasswordManager():
-    old_passwords = []
+        # there should be a default password
+        # old_password should be encapsulated
+    def __init__(self, password):
+        self.old_passwords = [password]
 
     def set_password(self, new_password):
         if new_password not in self.old_passwords:
@@ -19,18 +22,19 @@ class PasswordManager():
         else:
             return False
     
+#Test Cases
+pwd = PasswordManager("user124")
+print(f"\nPassword History: {pwd.old_passwords}")
 
-pwd = PasswordManager()
-pwd.set_password("kofi123")
-print(pwd.old_passwords)
+pwd.set_password("worLA@")
+print(f"\nPassword History: {pwd.old_passwords}")
 
-pwd.set_password("joHN@5")
-print(pwd.old_passwords)
+print(pwd.set_password("worLA@"))
+print(f"\nPassword History: {pwd.old_passwords}")
 
-print(pwd.set_password("kofi123"))
-print(pwd.old_passwords)
+pwd.set_password("worlako25")
+print(f"\nPassword History: {pwd.old_passwords}")
 
 print(pwd.get_password())
 
-print(pwd.is_correct("joHN@5"))
-print(pwd.is_correct("kofi123"))
+print(pwd.is_correct("user124"))
