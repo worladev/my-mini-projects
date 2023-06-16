@@ -6,7 +6,8 @@ class Converter:
         self.unit_value = {
             'inches':{
                 'inches': 1,'centimeters':2.54,'feet':0.083,'kilometers':0.000025,'meters':0.025,
-                'yards':0.02777778,'millimeters':25.4,'miles':0.00001578,},
+                'yards':0.02777778,'millimeters':25.4,'miles':0.00001578,
+            },
             'feet':{
                 'feet': 1,'centimeters':30.48,'inches':12,'kilometers':0.0003,'meters':0.3048,
                 'yards':0.3333,'millimeters':304.8,'miles':0.000189,
@@ -40,39 +41,52 @@ class Converter:
         self.unit = unit
         self.single_unit = self.unit_value[unit]
 
+        ##{SOME MODIFICATION}##
+        
+        ##{SOME MODIFICATION}##
+
+
 
     ### Converter Methods
     # converts to inches
     def inches(self):
-        return f"{self.length}{self.unit} is: {(self.single_unit.get('inches') * self.length):.2f}in"
+        convert_to_inches = self.single_unit.get('inches') * self.length
+        return f"{self.length}{self.unit} is: {(convert_to_inches):.2f}In"
     
     # converts to feet
     def feet(self):
-        return f"{(self.single_unit.get('feet') * self.length):.2f}ft"
+        convert_to_feet = self.single_unit.get('feet') * self.length
+        return f"{self.length}{self.unit} is: {(convert_to_feet):.2f}ft"
     
     # converts to yards
     def yards(self):
-        return f"{(self.single_unit.get('yards') * self.length):.2f}yd"
+        convert_to_yards = self.single_unit.get('yards') * self.length
+        return f"{self.length}{self.unit} is: {(convert_to_yards):.2f}yd"
     
     # converts to miles
     def miles(self):
-        return f"{(self.single_unit.get('miles') * self.length):.2f}ml"
+        convert_to_miles = self.single_unit.get('miles') * self.length
+        return f"{self.length}{self.unit} is: {(convert_to_miles):.2f}ml"
     
     # converts to kilometers
     def kilometers(self):
-        return f"{(self.single_unit.get('kilometers') * self.length):.2f}km"
+        convert_to_km = self.single_unit.get('kilometers') * self.length
+        return f"{self.length}{self.unit} is: {(convert_to_km):.2f}km"
     
     # converts to meters
     def meters(self):
-        return f"{(self.single_unit.get('meters') * self.length):.2f}m"
+        convert_to_meters = self.single_unit.get('meters') * self.length
+        return f"{self.length}{self.unit} is: {(convert_to_meters):.2f}m"
     
     # converts to centimeters
     def centimeters(self):
-        return f"{self.length}{self.unit} is: {(self.single_unit.get('centimeters') * self.length):.2f}cm"
+        convert_to_cm = self.single_unit.get('centimeters') * self.length
+        return f"{self.length}{self.unit} is: {(convert_to_cm):.2f}cm"
     
     # converts to millimeters
     def millimeters(self):
-        return f"{(self.single_unit.get('millimeters') * self.length):.2f}mm"
+        convert_to_mm = self.single_unit.get('millimeters') * self.length
+        return f"{self.length}{self.unit} is: {(convert_to_mm):.2f}mm"
 
 
 print("\n")
